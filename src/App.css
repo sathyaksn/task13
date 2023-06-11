@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+  font-family:Oxygen, sans-serif;
+  margin: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.wrapper{
+  display:flex;
+  width:100%; 
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+  background-color: white;
+  border-radius: 20px;
+  margin:40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction:column;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card_header{
+  text-align: center;
+  padding:20px;
+}
+
+.card_header p{
+  margin-bottom: 0px;
+}
+
+.period{
+  font-size: 1rem;
+}
+
+.card_title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  opacity: .5;
+ 
+}
+
+hr{
+  margin: 0px 30px 0px 30px;
+}
+
+.card_content ul li{
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list_checked::before{
+  content: '✓';
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+ul{
+list-style-type: none;
+}
+.card_description .text-muted::before{
+    content: 'x';
+    font-weight: bold;
+    margin-right: 10px;
+   
+   
   }
-  to {
-    transform: rotate(360deg);
+
+.card_footer{
+  display: flex;
+  justify-content:center;
+  margin-bottom: 20px;
+}
+
+.card_btn{
+  background-color: #007bff;
+  color:white;
+  width: 80%;
+  font-size: 80%;
+  border-radius: 5rem;
+  border: 0px solid white;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.6s;
+}
+
+@media (max-width: 1250px) {
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+
+  .card:hover .card_btn {
+    opacity: 3;
+  }
+}
+
+@media (min-width: 1250px) {
+
+  .card{
+    width:20%;
+    min-width:360px;
+  }
+
+  .card:hover {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    transition: all 0.5s;
+  }
+
+  .card:hover .card_btn {
+    opacity:1;
   }
 }
